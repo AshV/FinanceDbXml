@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="206" y="183" name="staff">
+</datatypes><table x="211" y="258" name="staff">
 <row name="emp_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -77,10 +77,6 @@
 <row name="unit_joining_date" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
-<row name="client_id_client" null="1" autoincrement="0">
-<datatype>VARCHAR(50)</datatype>
-<default>NULL</default><relation table="client" row="client_id" />
-</row>
 <row name="center_id_center" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default><relation table="center" row="center_id" />
@@ -93,7 +89,7 @@
 <part>emp_id</part>
 </key>
 </table>
-<table x="567" y="250" name="center">
+<table x="621" y="232" name="center">
 <row name="center_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -127,7 +123,7 @@
 <part>center_id</part>
 </key>
 </table>
-<table x="392" y="504" name="branch">
+<table x="584" y="566" name="branch">
 <row name="branch_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -143,15 +139,11 @@
 <row name="branch_type" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
-<row name="center_id_center" null="1" autoincrement="0">
-<datatype>VARCHAR(50)</datatype>
-<default>NULL</default><relation table="center" row="center_id" />
-</row>
 <key type="PRIMARY" name="">
 <part>branch_id</part>
 </key>
 </table>
-<table x="388" y="38" name="client_account">
+<table x="348" y="17" name="client_account">
 <row name="account_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -188,7 +180,7 @@
 <part>client_ppi_id</part>
 </key>
 </table>
-<table x="1078" y="61" name="loan_proposal">
+<table x="361" y="90" name="loan_proposal">
 <row name="loan_proposal_id" null="1" autoincrement="1">
 <datatype>VARCHAR(5)</datatype>
 <default>NULL</default></row>
@@ -334,7 +326,7 @@
 <part>crt_id</part>
 </key>
 </table>
-<table x="905" y="171" name="vendor">
+<table x="934" y="160" name="vendor">
 <row name="vendor_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
