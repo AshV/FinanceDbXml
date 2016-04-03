@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="194" y="73" name="staff">
+</datatypes><table x="201" y="90" name="staff">
 <row name="emp_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -77,10 +77,6 @@
 <row name="unit_joining_date" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
-<row name="client_id_client" null="1" autoincrement="0">
-<datatype>VARCHAR(50)</datatype>
-<default>NULL</default><relation table="client" row="client_id" />
-</row>
 <row name="center_id_center" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default><relation table="center" row="center_id" />
@@ -93,7 +89,7 @@
 <part>emp_id</part>
 </key>
 </table>
-<table x="590" y="225" name="center">
+<table x="728" y="236" name="center">
 <row name="center_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -127,7 +123,7 @@
 <part>center_id</part>
 </key>
 </table>
-<table x="195" y="472" name="branch">
+<table x="201" y="474" name="branch">
 <row name="branch_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -151,7 +147,7 @@
 <part>branch_id</part>
 </key>
 </table>
-<table x="388" y="38" name="client_account">
+<table x="455" y="30" name="client_account">
 <row name="account_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -180,7 +176,7 @@
 <part>account_id</part>
 </key>
 </table>
-<table x="396" y="292" name="client_ppi">
+<table x="450" y="237" name="client_ppi">
 <row name="client_ppi_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -188,7 +184,7 @@
 <part>client_ppi_id</part>
 </key>
 </table>
-<table x="961" y="111" name="loan_proposal">
+<table x="1120" y="128" name="loan_proposal">
 <row name="loan_proposal_id" null="1" autoincrement="1">
 <datatype>VARCHAR(5)</datatype>
 <default>NULL</default></row>
@@ -234,7 +230,7 @@
 <part>loan_proposal_id</part>
 </key>
 </table>
-<table x="899" y="34" name="disburment">
+<table x="999" y="33" name="disburment">
 <row name="disbutment_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -242,7 +238,7 @@
 <part>disbutment_id</part>
 </key>
 </table>
-<table x="606" y="26" name="account">
+<table x="718" y="20" name="account">
 <row name="account_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -270,7 +266,7 @@
 <part>account_id</part>
 </key>
 </table>
-<table x="795" y="465" name="BankSignatory">
+<table x="955" y="486" name="BankSignatory">
 <row name="bank_signatory_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -305,7 +301,7 @@
 <part>bank_signatory_id</part>
 </key>
 </table>
-<table x="597" y="456" name="crt">
+<table x="701" y="476" name="crt">
 <row name="crt_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -334,7 +330,7 @@
 <part>crt_id</part>
 </key>
 </table>
-<table x="790" y="216" name="vendor">
+<table x="911" y="229" name="vendor">
 <row name="vendor_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -369,7 +365,7 @@
 <part>vendor_id</part>
 </key>
 </table>
-<table x="19" y="19" name="client">
+<table x="25" y="22" name="client">
 <row name="client_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -452,7 +448,7 @@
 <part>client_id</part>
 </key>
 </table>
-<table x="391" y="385.2222281091009" name="target">
+<table x="454" y="318.2222281091009" name="target">
 <row name="target_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
