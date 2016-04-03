@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="211" y="258" name="staff">
+</datatypes><table x="194" y="73" name="staff">
 <row name="emp_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -77,6 +77,10 @@
 <row name="unit_joining_date" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
+<row name="client_id_client" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="client" row="client_id" />
+</row>
 <row name="center_id_center" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default><relation table="center" row="center_id" />
@@ -89,7 +93,7 @@
 <part>emp_id</part>
 </key>
 </table>
-<table x="621" y="232" name="center">
+<table x="590" y="225" name="center">
 <row name="center_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -123,7 +127,7 @@
 <part>center_id</part>
 </key>
 </table>
-<table x="584" y="566" name="branch">
+<table x="195" y="472" name="branch">
 <row name="branch_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -139,11 +143,15 @@
 <row name="branch_type" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
+<row name="center_id_center" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="center" row="center_id" />
+</row>
 <key type="PRIMARY" name="">
 <part>branch_id</part>
 </key>
 </table>
-<table x="348" y="17" name="client_account">
+<table x="388" y="38" name="client_account">
 <row name="account_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -172,7 +180,7 @@
 <part>account_id</part>
 </key>
 </table>
-<table x="393" y="228" name="client_ppi">
+<table x="396" y="292" name="client_ppi">
 <row name="client_ppi_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -180,7 +188,7 @@
 <part>client_ppi_id</part>
 </key>
 </table>
-<table x="361" y="90" name="loan_proposal">
+<table x="961" y="111" name="loan_proposal">
 <row name="loan_proposal_id" null="1" autoincrement="1">
 <datatype>VARCHAR(5)</datatype>
 <default>NULL</default></row>
@@ -262,7 +270,7 @@
 <part>account_id</part>
 </key>
 </table>
-<table x="1025" y="422" name="BankSignatory">
+<table x="795" y="465" name="BankSignatory">
 <row name="bank_signatory_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -297,7 +305,7 @@
 <part>bank_signatory_id</part>
 </key>
 </table>
-<table x="754" y="335" name="crt">
+<table x="597" y="456" name="crt">
 <row name="crt_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -326,7 +334,7 @@
 <part>crt_id</part>
 </key>
 </table>
-<table x="934" y="160" name="vendor">
+<table x="790" y="216" name="vendor">
 <row name="vendor_id" null="1" autoincrement="1">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -398,9 +406,6 @@
 <row name="customer_id" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
-<row name="center_id" null="1" autoincrement="0">
-<datatype>VARCHAR(50)</datatype>
-<default>NULL</default></row>
 <row name="account_no" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
@@ -431,7 +436,115 @@
 <row name="proof_add" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
-<row name="emp_id" null="1" autoincrement="0">
+<row name="emp_id_staff" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="staff" row="emp_id" />
+</row>
+<row name="center_id_center" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="center" row="center_id" />
+</row>
+<row name="target_id_target" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="target" row="target_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>client_id</part>
+</key>
+</table>
+<table x="391" y="385.2222281091009" name="target">
+<row name="target_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="unit_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="dob" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="staff_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="bda_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="bc_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="member_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="age" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="date" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="no_of_members" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Mother_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Father_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Husband_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Enorollment_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="id_type" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="id_number" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="resident_proof " null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="add1" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="add2" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="account_id_account" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="account" row="account_id" />
+</row>
+<row name="bank_branch_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="IFSC_code" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="religion" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="no_of_son" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="no_of_daughter" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="mobile_number" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="poverty_status" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="product_assets_value" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="response" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="sahred_irrigate" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="share_non_irrigate" null="1" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>NULL</default></row>
 <row name="emp_id_staff" null="1" autoincrement="0">
@@ -439,7 +552,7 @@
 <default>NULL</default><relation table="staff" row="emp_id" />
 </row>
 <key type="PRIMARY" name="">
-<part>client_id</part>
+<part>target_id</part>
 </key>
 </table>
 </sql>
