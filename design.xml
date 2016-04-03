@@ -37,4 +37,406 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes></sql>
+</datatypes><table x="166" y="98" name="staff">
+<row name="emp_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="f_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="m_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="l_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="contact" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="dob" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="married_status" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="qualification" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="add1" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="add2" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="upload_staff_pic" null="1" autoincrement="0">
+<datatype>BLOB</datatype>
+<default>NULL</default></row>
+<row name="staff_account_details" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="unit_joining_date" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="center_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="center" row="center_id" />
+</row>
+<row name="branch_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="branch" row="branch_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>emp_id</part>
+</key>
+</table>
+<table x="593" y="242" name="center">
+<row name="center_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="branch_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="branch" row="branch_id" />
+</row>
+<row name="center_code" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_add" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_pincode" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_manager" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Fromation_date" null="1" autoincrement="0">
+<datatype>DATE(50)</datatype>
+<default>NULL</default></row>
+<row name="crt_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="crt" row="crt_id" />
+</row>
+<row name="unit_name" null="1" autoincrement="0">
+<datatype>VARBINARY(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>center_id</part>
+</key>
+</table>
+<table x="374" y="437" name="branch">
+<row name="branch_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="branch_code" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="branch_add" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="mranch_manager" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="branch_type" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="center" row="center_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>branch_id</part>
+</key>
+</table>
+<table x="393" y="29" name="client_account">
+<row name="account_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="account" row="account_id" />
+</row>
+<row name="account_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="client_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="client1" row="client_id" />
+</row>
+<row name="opening_date" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="opening_amount" null="1" autoincrement="0">
+<datatype>INTEGER(50)</datatype>
+<default>NULL</default></row>
+<row name="client_ppi_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="client_ppi" row="client_ppi_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>account_id</part>
+</key>
+</table>
+<table x="374" y="222" name="client_ppi">
+<row name="client_ppi_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>client_ppi_id</part>
+</key>
+</table>
+<table x="983" y="86" name="loan_proposal">
+<row name="loan_proposal_id" null="1" autoincrement="1">
+<datatype>VARCHAR(5)</datatype>
+<default>NULL</default></row>
+<row name="Amount" null="1" autoincrement="0">
+<datatype>INTEGER(50)</datatype>
+<default>NULL</default></row>
+<row name="Center_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Client_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="client1" row="client_id" />
+</row>
+<row name="Client_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Loan_product" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Loan_purpose" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Loan_Proposal_date" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="Staff_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Comment" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT(200)</datatype>
+<default>NULL</default></row>
+<row name="Unit_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="client_id_client1" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="vendor_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="vendor" row="vendor_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>loan_proposal_id</part>
+</key>
+</table>
+<table x="835" y="29" name="disburment">
+<row name="disbutment_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>disbutment_id</part>
+</key>
+</table>
+<table x="626" y="34" name="account">
+<row name="account_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="account_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="debit" null="1" autoincrement="0">
+<datatype>INTEGER(50)</datatype>
+<default>NULL</default></row>
+<row name="credit" null="1" autoincrement="0">
+<datatype>INTEGER(50)</datatype>
+<default>NULL</default></row>
+<row name="remark" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="loan_proposal_id" null="1" autoincrement="0">
+<datatype>VARCHAR(5)</datatype>
+<default>NULL</default><relation table="loan_proposal" row="loan_proposal_id" />
+</row>
+<row name="disbutment_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default><relation table="disburment" row="disbutment_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>account_id</part>
+</key>
+</table>
+<table x="950" y="458" name="BankSignatory">
+<row name="bank_signatory_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="bank_ac_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="bank_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Region" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="State" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="unit_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Signatory1" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Signatory2" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Signatory3" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Signatory4" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>bank_signatory_id</part>
+</key>
+</table>
+<table x="806" y="203" name="crt">
+<row name="crt_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="crt_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="unit_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="BDA_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="BE_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="First_meeting_date" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="Tester_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="UM_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>crt_id</part>
+</key>
+</table>
+<table x="733" y="455" name="vendor">
+<row name="vendor_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="vendor_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="contact_number" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="email_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="Is_archive" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="region_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="state" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="unit_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="add" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<row name="District" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>vendor_id</part>
+</key>
+</table>
+<table x="19" y="19" name="client1">
+<row name="client_id" null="1" autoincrement="1">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="f_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="l_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="email_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="contact_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="pan_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="dob" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="aadhar_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="sex" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="add1" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="add2" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="customer_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="center_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="account_no" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="nominee_name" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="niminee_age" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="accoupation" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="monthly_income " null="1" autoincrement="0">
+<datatype>INTEGER(50)</datatype>
+<default>NULL</default></row>
+<row name="self_emp_bisiness" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="community" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="education" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="proof_id" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="proof_add" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>client_id</part>
+</key>
+</table>
+</sql>
